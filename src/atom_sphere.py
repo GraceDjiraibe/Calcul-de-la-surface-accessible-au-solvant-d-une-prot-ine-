@@ -8,6 +8,7 @@ import numpy as np
 import pandas as pd 
 import time
 from scipy.spatial import distance_matrix 
+from progressbar import ProgressBar
 
 
 
@@ -99,13 +100,14 @@ def neighboors(data_frame_matrix):
  	THRESOLD = 1.4 + VDW_RADIUS['S'] * 2
  	row_matrix =[]
  	i_matrix = []
+ 	prog = ProgressBar()
 
  	for index, row in data_frame_matrix.iterrows():
  		row_matrix.append(row)
  		i_matrix.append(index)
 
  	atom_neighboors = {}
- 	for i in range(len(i_matrix)):
+ 	for i in prog(range(len(i_matrix))):
  		neighboors = []
  		for j in range(len(row_matrix[i]) - 1):
  			if(row_matrix[i][j] < THRESOLD) & (i != j):
@@ -135,7 +137,8 @@ def contact_atom(data_coords_atom, atom_neighboors, nb):
 	"""
 
 	atom_solvate_dict = {}
-	for key in atom_neighboors:
+	prog = ProgressBar()
+	for key in prog(atom_neighboors):
 		new_neighboors = []
 		new_neighboors.append(key)
 		for atom in atom_neighboors[key]:
