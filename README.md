@@ -46,7 +46,7 @@ $ conda env create -f projet.yml
  
  ## Programs 
  
- NACCESS 
+ NACCESS or FreeSASA
  
  ## Manual
  
