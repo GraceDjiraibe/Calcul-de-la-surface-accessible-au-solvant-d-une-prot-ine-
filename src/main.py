@@ -6,11 +6,11 @@ To be used from the Shell
 	$ python main.py arg1 arg2 arg3
 		** arg 1 : str
 			pdb file (file.pdb)
-		** arg 2 : str
-			the Naccess file obtain from the pdb (file.rsa)
-		** arg 3 : int
+		** arg 2 : int
 			number of points that we want to simulate on the sphere 
-			surface 	
+			surface
+		** arg 3 : str
+			the Naccess file obtain from the pdb (file.rsa)
 			
 """
 import argparse
