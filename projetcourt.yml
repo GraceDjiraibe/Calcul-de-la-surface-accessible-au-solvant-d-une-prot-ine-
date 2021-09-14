@@ -1,0 +1,10 @@
+name: projetcourt
+channels:
+    - defaults
+    - bioconda
+    - conda-forge
+dependencies:
+    - python=3.9
+    - matplotlib
+    - pandas
+    - numpy 
